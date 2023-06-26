@@ -2994,9 +2994,14 @@ class PlayState extends MusicBeatState
 
 		if (health > 2)
 		{
-		healthBarBG.screenCenter(X);
-		healthBarBG.x =- healthBarBG.width / 2 * (health - 2);
-		healthBar.x = healthBarBG.x + 4;
+		healthBar.screenCenter(X);
+		healthBar.x =- healthBar.width / 2 * (health - 2);
+		healthBarBG.x = healthBar.x - 4;
+		}
+		else
+		{
+		healthBar.screenCenter(X);
+		healthBarBG.x = healthBar.x - 4;
 		}
 
 		var mult:Float = FlxMath.lerp(1, iconP1.scale.x, CoolUtil.boundTo(1 - (elapsed * 9 * playbackRate), 0, 1));
