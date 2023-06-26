@@ -2995,7 +2995,7 @@ class PlayState extends MusicBeatState
 		if (health > 2)
 		{
 		healthBar.screenCenter(X);
-		healthBar.x =- healthBar.width / 2 * (health - 2);
+		healthBar.x -= healthBar.width / 2 * (health - 2);
 		healthBarBG.x = healthBar.x - 4;
 		}
 		else
