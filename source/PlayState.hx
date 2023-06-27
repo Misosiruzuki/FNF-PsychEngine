@@ -2992,16 +2992,22 @@ class PlayState extends MusicBeatState
 		// FlxG.watch.addQuick('VOL', vocals.amplitudeLeft);
 		// FlxG.watch.addQuick('VOLRight', vocals.amplitudeRight);
 
+		var ugoita:Bool = false;
 		if (health > 2)
 		{
 		healthBar.screenCenter(X);
 		healthBar.x -= healthBar.width / 2 * (health - 2);
 		healthBarBG.x = healthBar.x - 4;
+		if (!ugoita)
+		{
+		ugoita = true;
 		}
-		else
+		}
+		else if (ugoita)
 		{
 		healthBar.screenCenter(X);
 		healthBarBG.x = healthBar.x - 4;
+		ugoita = false;
 		}
 
 		var mult:Float = FlxMath.lerp(1, iconP1.scale.x, CoolUtil.boundTo(1 - (elapsed * 9 * playbackRate), 0, 1));
